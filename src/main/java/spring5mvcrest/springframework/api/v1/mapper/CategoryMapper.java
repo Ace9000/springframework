@@ -9,6 +9,5 @@ import spring5mvcrest.springframework.domain.Category;
 @Mapper
 public interface CategoryMapper {
     CategoryMapper INSTANCE = Mappers.getMapper(CategoryMapper.class);
-    @Mapping(source = "id", target = "id")
-    CategoryDTO categoryDTOtoCategoryDTO(Category category);
+    CategoryDTO categoryToCategoryDTO(Category category);
 }
