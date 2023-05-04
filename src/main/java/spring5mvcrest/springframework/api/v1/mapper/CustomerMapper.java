@@ -8,5 +8,5 @@ import spring5mvcrest.springframework.domain.Customer;
 public interface CustomerMapper {
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
     CustomerDTO customerToCustomerDTO(Customer customer);
-    Customer customerDtoToCustomer( CustomerDTO customerDTO);
+    Customer customerDtoToCustomer(CustomerDTO customerDTO);
 }

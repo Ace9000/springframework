@@ -1,13 +1,17 @@
 package spring5mvcrest.springframework;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 @SpringBootApplication
 public class SpringframeworkApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringframeworkApplication.class, args);
+		new SpringApplicationBuilder(SpringframeworkApplication.class)
+				.web(WebApplicationType.NONE)
+				.run(args);
 	}
 
 }
