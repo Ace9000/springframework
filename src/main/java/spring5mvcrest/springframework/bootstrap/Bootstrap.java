@@ -4,16 +4,20 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import spring5mvcrest.springframework.domain.Category;
 import spring5mvcrest.springframework.domain.Customer;
+import spring5mvcrest.springframework.domain.Vendor;
 import spring5mvcrest.springframework.repositories.CategoryRepository;
 import spring5mvcrest.springframework.repositories.CustomerRepository;
+import spring5mvcrest.springframework.repositories.VendorRepository;
 
 @Component
 public class Bootstrap implements CommandLineRunner {
     private final CategoryRepository categoryRepository;
     private final CustomerRepository customerRepository;
-    public Bootstrap(CategoryRepository categoryRepository, CustomerRepository customerRepository) {
+    private final VendorRepository vendorRepository;
+    public Bootstrap(CategoryRepository categoryRepository, CustomerRepository customerRepository, VendorRepository vendorRepository) {
         this.categoryRepository = categoryRepository;
         this.customerRepository = customerRepository;
+        this.vendorRepository = vendorRepository;
     }
 
     @Override
@@ -21,6 +25,16 @@ public class Bootstrap implements CommandLineRunner {
 
         loadCustomers();
         loadCategories();
+        loadVendors();
+    }
+    private void loadVendors() {
+        Vendor vendor1 = new Vendor();
+        vendor1.setName("Vendor 1");
+        vendorRepository.save(vendor1);
+
+        Vendor vendor2 = new Vendor();
+        vendor2.setName("Vendor 2");
+        vendorRepository.save(vendor2);
     }
 
     private void loadCategories() {

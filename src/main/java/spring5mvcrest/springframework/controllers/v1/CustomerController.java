@@ -1,8 +1,6 @@
 package spring5mvcrest.springframework.controllers.v1;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import spring5mvcrest.springframework.api.v1.model.CustomerDTO;
 import spring5mvcrest.springframework.api.v1.model.CustomerListDTO;
